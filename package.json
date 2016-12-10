@@ -1,0 +1,20 @@
+{
+  "name": "merit-core",
+  "version": "1.0.0",
+  "description": "An interdependence version manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paul Robinson <niffydroid@gmail.com>",
+  "license": "ISC",
+  "engines": {
+    "node": ">=6.9.2",
+    "npm": ">=4.0.3"
+  },
+  "dependencies": {
+    "fs-extra": "^2.0.0",
+    "gift": "https://github.com/Niffy/gift.git#feature/advanced_status",
+    "semver": "^5.3.0"
+  }
+}
