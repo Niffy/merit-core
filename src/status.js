@@ -53,6 +53,7 @@ class Status {
         })
         return resolve(obj)
       })
+      .catch(reject)
     })
   }
 
