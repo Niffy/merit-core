@@ -62,7 +62,8 @@ class Target {
       }
 
       if (contents.dependencies === undefined) {
-        return reject(new Error(`Package ${contents.name} data does not contain dependencies`))
+        return resolve()
+        // return reject(new Error(`Package ${contents.name} data does not contain dependencies`))
       }
       
       let keys = Object.keys(contents.dependencies)
