@@ -128,6 +128,10 @@ class Target {
       }
       prevValue = pkgData.dependencies[loc.key]
       pkgData.dependencies[loc.key] = newValue 
+      if (type === 'branch') {
+        newValue = newValue.substring(newValue.indexOf('#') +1, newValue.length)
+        prevValue = prevValue.substring(prevValue.indexOf('#') +1, prevValue.length)
+      }
       return resolve({pkgData, prevValue, newValue})
     })
   }
