@@ -82,6 +82,31 @@ class Branch {
     })
   }
 
+  push(repo_config, branch, ops) {
+    return new Promise((resolve, reject) => {
+      if (!repo_config) {
+        return reject(new Error('No config provided'))
+      }
+      if (!ops) {
+        ops = {}
+      }
+      let defaultRemote = (repo_config.defaultRemote) ? repo_config.defaultRemote : 'origin'
+      let remote = (ops.remote) ? ops.remote : defaultRemote
+
+      if (repo_config.remotes.indexOf(remote) == -1) {
+        return resolve({pushed: false, err: 'branch does not exist'})
+      }
+      let repo = gift(repo_config.config.path)
+      repo.remote_push(remote, null, ops, (err) => {
+        if (err) {
+          console.log(err)
+          return resolve({pushed: false, err: err})
+        }
+        return resolve({pushed: true})
+      })
+    })
+  }
+
   branches(repo_config) {
     return new Promise((resolve, reject) => {
       if (!repo_config) {
