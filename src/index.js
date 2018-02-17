@@ -3,5 +3,6 @@ module.exports = {
   Status: require('./status'),
   Branch: require('./branch'),
   Repo: require('./repo'),
-  Target: require('./target')
+  Target: require('./target'),
+  Push: require('./push')
 }
