@@ -97,7 +97,7 @@ class Branch {
         return resolve({pushed: false, err: 'branch does not exist'})
       }
       let repo = gift(repo_config.config.path)
-      repo.remote_push(remote, branch, ops, (err) => {
+      repo.remote_push(remote, null, ops, (err) => {
         if (err) {
           console.log(err)
           return resolve({pushed: false, err: err})
